@@ -1,0 +1,45 @@
+
+
+.container-inline {float: right;}
+
+.block-icon-service span {
+    background: url(../images/ico-block-igp.png) no-repeat;
+    display: block;
+    height: 40px;
+    margin: 0 auto;
+    width: 40px;
+}
+.block-icon-service.block-icon-1 span {
+    background-position: -50px 0;
+}
+.block-icon-service.block-icon-2 span {
+    background-position: -50px -50px;
+}
+.block-icon-service.block-icon-3 span {
+    background-position: -50px -100px;
+}
+.block-icon-service.block-icon-4 span {
+    background-position: -50px -150px;
+}
+.block-icon-service.block-icon-5 span {
+    background-position: -50px -200px;
+}
+#search-igp {
+    position: relative;
+    display: block;
+}
+#search-igp .conte {
+    float: right;
+}
+#search-igp{
+    background: #EEECEC;
+}
+.region-search{
+    padding: 0 1em;
+}
+body .entry-body {
+    margin: 10px 0 0px 0;
+}
+body .hentry {
+    margin: 0 0 5px 0;
+}
