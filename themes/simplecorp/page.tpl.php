@@ -14,8 +14,15 @@
               </div>
 
             </div>
-
         <?php endif; ?>
+
+        <div id="header-igp">
+        <div id="logo-minam">
+            <img src="<?php print base_path() . drupal_get_path('theme', 'simplecorp') ;?>/images/logo-minan-igp_2012.png">
+        </div>
+        <div id="logo-igp"><img src="<?php print base_path() . drupal_get_path('theme', 'simplecorp') ;?>/images/igp-trans.png"></div>
+        </div>
+
         <header role="header" class="container clearfix">
 
             <!-- #pre-header -->

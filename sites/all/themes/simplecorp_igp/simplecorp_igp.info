@@ -26,7 +26,7 @@ regions[page_bottom] = Page bottom
 
 settings[breadcrumb_display]= 1
 settings[breadcrumb_separator]= '/'
-settings[main_menu_custom_js]= 1
+settings[main_menu_custom_js]= 0
 settings[header_tooltip_js]= 1
 settings[social_icons_display]= 1
 settings[highlighted_display]= 1
@@ -38,7 +38,7 @@ settings[slideshow_display]= 1
 settings[slideshow_js]= 1
 settings[slideshow_effect]='slide'
 settings[slideshow_effect_time]='5'
-settings[slideshow_random]= 0
+settings[slideshow_random]= 1
 settings[slideshow_controls]= 1
 settings[slideshow_pause]= 1
 settings[slideshow_touch]= 1

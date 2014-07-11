@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
 /**
  * Add javascript files for jquery slideshow.
  */
@@ -52,6 +52,7 @@ if (theme_get_setting('carousel_js','simplecorp')):
 
 	drupal_add_js(drupal_get_path('theme', 'simplecorp') . '/js/plugins/jquery.jcarousel.min.js');
 	drupal_add_js(drupal_get_path('theme', 'simplecorp') . '/js/jquery.easing-1.3.min.js');
+	drupal_add_js(drupal_get_path('theme', 'simplecorp') . '/js/datatable/jquery.dataTables.min.js');
 
 	//Initialize slideshow using theme settings
 	$carousel_effect_time=theme_get_setting('carousel_effect_time','simplecorp')*1000;
@@ -59,6 +60,39 @@ if (theme_get_setting('carousel_js','simplecorp')):
 
 	drupal_add_js('
 		jQuery(document).ready(function($) {
+			jQuery("#tb_anexos").dataTable({
+				"bLengthChange": false,
+				//"oLanguage": {"sUrl": "/js/datatable/es_ES.txt"},-- no funciona embebido
+				"oLanguage": {
+					"sProcessing":     "Procesando...",
+					"sLengthMenu":     "Mostrar _MENU_ registros",
+					"sZeroRecords":    "No se encontraron resultados",
+					"sEmptyTable":     "Ningún dato disponible en esta tabla",
+					"sInfo":           "_START_ a _END_ de _TOTAL_ registros",
+					//"sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+					"sInfoEmpty":      "0 registros",
+					"sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+					"sInfoPostFix":    "",
+					"sSearch":         "Buscar:",
+					"sUrl":            "",
+					"sInfoThousands":  ",",
+					"sLoadingRecords": "Cargando...",
+					"oPaginate": {
+							"sFirst":    "Primero",
+							"sLast":     "Último",
+							"sNext":     ">",
+							"sPrevious": "<"
+					},
+					"oAria": {
+							"sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+							"sSortDescending": ": Activar para ordenar la columna de manera descendente"
+					}
+				},
+				"bPaginate": true,
+				"sPaginationType": "full_numbers",
+				"iDisplayLength": 10,
+
+			});
 
 		    var currentWindowWidth = jQuery(window).width();
 		    jQuery(window).resize(function() {
@@ -93,7 +127,7 @@ if (theme_get_setting('carousel_js','simplecorp')):
 		            }
 		            hover_effect();
 		        }
-				
+
 		        (function() {
 		            var jQuerycarousel = jQuery("#projects-carousel");
 		            if (jQuerycarousel.length) {
@@ -119,7 +153,7 @@ if (theme_get_setting('carousel_js','simplecorp')):
 		        })();
 		    });
 		});',	array('type' => 'inline', 'scope' => 'footer', 'weight' => 7)
-	);	
+	);
 
 endif;
 
@@ -232,17 +266,17 @@ if (theme_get_setting('header_tooltip_js','simplecorp')):
 		    }
 		});', array('type' => 'inline', 'scope' => 'footer', 'weight' => 9)
 	);
-endif;			
+endif;
 
 
 /**
  * Add jquery.prettyPhoto.js and prettyPhoto.css files for portfolio items
  */
 if (theme_get_setting('prettyphoto_js','simplecorp')):
-	
+
 	drupal_add_js(drupal_get_path('theme', 'simplecorp') . '/js/plugins/jquery.prettyPhoto.js');
 	drupal_add_css(drupal_get_path('theme', 'simplecorp') . '/css/plugins/prettyPhoto.css');
-	
+
 	$prettyphoto_theme=theme_get_setting('prettyphoto_theme','simplecorp');
 	$prettyphoto_social_tools=theme_get_setting('prettyphoto_social_tools','simplecorp');
 
@@ -296,7 +330,7 @@ jQuery(document).ready(function($) {
 if (theme_get_setting('quicksand_js','simplecorp')):
 drupal_add_js(drupal_get_path('theme', 'simplecorp') .'/js/plugins/jquery.quicksand.js');
 drupal_add_js(drupal_get_path('theme', 'simplecorp') .'/js/plugins/quicksand_initialize.js');
-endif;	
+endif;
 
 
 /**
@@ -333,7 +367,7 @@ if (theme_get_setting('jtweetanywhere_js','simplecorp')):
 		    });
 		});',	array('type' => 'inline', 'scope' => 'footer', 'weight' => 16)
 	);
-endif;	
+endif;
 
 
 /**
@@ -369,7 +403,7 @@ function simplecorp_button($variables) {
 		$button_classes = '';
 	} else {
 		$button_classes = ' button small round ';
-	}	
+	}
 	$element = $variables['element'];
 	$element['#attributes']['type'] = 'submit';
 	element_set_attributes($element, array('id', 'name', 'value'));
